@@ -20,6 +20,20 @@ public class sortMountains {
 	public static void main(String[] args) {
 		new sortMountains().go();
 	}
+	
+	public class Mountain {
+		String name;
+		int height;
+		
+		Mountain(String n, int h){
+			name = n;
+			height = h;
+		}
+		
+		public String toString() {
+			return name + " " + height;
+		}
+	}
 
 	public void go() {
 		mtn.add(new Mountain("Лонг-Рейдж", 14255));
@@ -38,19 +52,5 @@ public class sortMountains {
 		HeightCompare hc = new HeightCompare();
 		Collections.sort(mtn, hc);
 		System.out.println("По высоте: \n" + mtn);
-	}
-	
-	class Mountain {
-		String name;
-		int height;
-		
-		Mountain(String n, int h){
-			name = n;
-			height = h;
-		}
-		
-		public String toString() {
-			return name + " " + height;
-		}
 	}
 }
